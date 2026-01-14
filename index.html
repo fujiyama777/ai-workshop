@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミドル＆シニア限定！AIわくわくワークショップ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.js"></script>
+    <style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #fffff0; /* ivory */
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        .text-mediumorchid { color: #ba55d3; }
+        .bg-mediumorchid { background-color: #ba55d3; }
+        .text-purple { color: #800080; }
+        .bg-purple { background-color: #800080; }
+        
+        .hero-pattern {
+            background-color: #ba55d3;
+            background-image: radial-gradient(#ffffff 2px, transparent 2px);
+            background-size: 30px 30px;
+            opacity: 0.15;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ba55d3;
+            border-radius: 20px;
+            box-shadow: 8px 8px 0px #ba55d3;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-retro {
+            background-color: #800080;
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            box-shadow: 0 4px 0 #4a004a;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-retro:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 1.875rem;
+            color: #800080;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient(45deg, #ba55d3, #ba55d3 10px, #ffffff 10px, #ffffff 20px);
+            border-radius: 2px;
+        }
+
+        .lace-border {
+            background-image: radial-gradient(circle at 10px 10px, transparent 12px, #fffff0 13px);
+            background-size: 20px 20px;
+            height: 20px;
+            width: 100%;
+        }
+
+        /* ふわふわ浮く装飾用のアニメーション */
+        .decoration-float {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+
+        @keyframes float-slow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, -20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-mediumorchid/20">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-purple font-bold text-xl">AIわくわく</div>
+            <div class="hidden md:flex space-x-6 text-sm">
+                <a href="#about" class="hover:text-mediumorchid">講座内容</a>
+                <a href="#place" class="hover:text-mediumorchid">場所</a>
+                <a href="#info" class="hover:text-mediumorchid">日時・料金</a>
+                <a href="#contact" class="hover:text-mediumorchid">お問合せ</a>
+            </div>
+            <a href="#apply" class="bg-purple text-white px-4 py-2 rounded-full text-sm">お申込み</a>
+        </div>
+    </nav>
+
+    <!-- 1. ヒーローセクション（画像なし・中央配置） -->
+    <header class="relative pt-32 pb-24 md:pt-52 md:pb-40 overflow-hidden text-center">
+        <div class="absolute inset-0 hero-pattern -z-10"></div>
+        
+        <!-- 背景の装飾要素（画像のかわりに） -->
+        <div class="absolute top-1/4 left-10 w-24 h-24 bg-mediumorchid/10 rounded-full blur-2xl decoration-float"></div>
+        <div class="absolute bottom-1/4 right-10 w-32 h-32 bg-purple/10 rounded-full blur-2xl decoration-float" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative">
+            <div class="mb-10">
+                <span class="inline-block bg-mediumorchid/20 text-purple px-6 py-2 rounded-full text-sm font-bold mb-6 tracking-widest">
+                    50歳以上のAI初心者・女性対象
+                </span>
+                <h1 class="text-3xl md:text-6xl font-bold text-purple leading-tight mb-8">
+                    ミドル＆シニア限定！<br>
+                    <span class="text-mediumorchid inline-block mt-2">AIわくわくワークショップ</span>
+                </h1>
+                <p class="text-lg md:text-2xl mb-12 leading-relaxed text-gray-700">
+                    AIに、あなた専用の秘書になってもらい、<br>
+                    あなただけの作品を作りましょう
+                </p>
+                <div class="flex flex-col items-center space-y-4">
+                    <a href="#apply" class="btn-retro text-xl md:text-2xl">無料で相談・予約する</a>
+                    <p class="text-sm text-mediumorchid font-medium">✨ 初めての方でも、講師がゆっくり丁寧に伴走します ✨</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="lace-border"></div>
+
+    <!-- 2. 講座内容セクション -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="section-title">選べる２つのコース</h2>
+            <div class="grid md:grid-cols-2 gap-10 mt-10">
+                
+                <!-- コース1 -->
+                <div class="card p-8 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-mediumorchid/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-mediumorchid" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-purple mb-4">①ショート動画コース</h3>
+                    <p class="text-sm mb-6 text-gray-600">Instagram（いんすたぐらむ）、YouTube（ゆーちゅーぶ）、TikTok（てぃっくとっく）に使えるショート動画を作ります。</p>
+                    <ul class="text-left space-y-3 mb-8 w-full">
+                        <li class="flex items-start"><span class="text-mediumorchid mr-2">🌸</span>AIを使って最小限簡単にショート動画を制作</li>
+                        <li class="flex items-start"><span class="text-mediumorchid mr-2">🌸</span>自宅で再現できるプロジェクトとプロンプト作成</li>
+                        <li class="flex items-start"><span class="text-mediumorchid mr-2">🌸</span>Instagramアカウント取得から1本投稿まで体験</li>
+                        <li class="flex items-start font-bold text-purple"><span class="mr-2">✨</span>帰宅時のあなたはインスタグラマー！</li>
+                    </ul>
+                </div>
+
+                <!-- コース2 -->
+                <div class="card p-8 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-mediumorchid/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-mediumorchid" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-purple mb-4">②LINEスタンプコース</h3>
+                    <p class="text-sm mb-6 text-gray-600">AIを使ってLINEスタンプ16種類を作り、販売申請までを体験します。</p>
+                    <ul class="text-left space-y-3 mb-8 w-full">
+                        <li class="flex items-start"><span class="text-mediumorchid mr-2">🍀</span>AIで驚くほど簡単にスタンプ制作</li>
+                        <li class="flex items-start"><span class="text-mediumorchid mr-2">🍀</span>自分専用のカスタマイズ用プロンプト作成</li>
+                        <li class="flex items-start"><span class="text-mediumorchid mr-2">🍀</span>LINEクリエーターズのアカウント取得と申請体験</li>
+                        <li class="flex items-start font-bold text-purple"><span class="mr-2">✨</span>ご家族やお友達に自作スタンプを送りましょう！</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 開催場所セクション -->
+    <section id="place" class="py-20 bg-white/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="section-title">開催場所</h2>
+                    <p class="text-xl font-bold text-purple mb-4">森の秘密基地カフェ</p>
+                    <p class="mb-6 leading-relaxed">
+                        住所：森林県海見え市木漏れ日通り75◯番地<br>
+                        <span class="text-sm text-gray-500">※木々の隙間から海が見える、とても穏やかなカフェです。</span>
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border border-mediumorchid shadow-sm">
+                        <p class="text-sm italic">「道に迷われた際は、お気軽にお電話くださいね。」</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full h-64 md:h-80 bg-gray-200 rounded-3xl overflow-hidden border-4 border-white shadow-lg relative">
+                    <!-- Map Placeholder -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-ivory text-gray-400">
+                        <div class="text-center">
+                            <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m6-3l5.447 2.724a1 1 0 01.553.894v10.764a1 1 0 01-1.447.894L15 17m0 0l-6 3m6-3V3m-6 10V7"></path></svg>
+                            <p>【地図が表示されます】</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 & 5. 開催日時・料金セクション -->
+    <section id="info" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="section-title">開催概要とお持ち物</h2>
+            </div>
+            
+            <div class="grid gap-6">
+                <!-- 日時 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-md border-l-8 border-purple">
+                    <div class="md:w-1/3 bg-purple/10 p-6 flex items-center justify-center text-purple font-bold text-lg">開催日時</div>
+                    <div class="md:w-2/3 p-6">
+                        <p class="text-xl font-bold mb-2">2026年 随時開催中</p>
+                        <p class="text-mediumorchid mb-4">（★曜日の開催）各回５名様限定</p>
+                        <p class="text-lg">AM 9:00 〜 14:00 <span class="text-sm text-gray-500">(ランチ休憩含む)</span></p>
+                    </div>
+                </div>
+
+                <!-- 料金・持ち物 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-md border-l-8 border-mediumorchid">
+                    <div class="md:w-1/3 bg-mediumorchid/10 p-6 flex items-center justify-center text-mediumorchid font-bold text-lg">料金と持ち物</div>
+                    <div class="md:w-2/3 p-6">
+                        <p class="text-2xl font-bold text-purple mb-4">6,000円 <span class="text-sm text-gray-500">(税込)</span></p>
+                        <p class="text-sm mb-4">※ランチ代・ドリンク代がすべて含まれています。</p>
+                        <div class="border-t pt-4">
+                            <p class="font-bold mb-2">【当日お持ちいただくもの】</p>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>スマートフォン</li>
+                                <li>ノートとペン</li>
+                                <li>パソコン（お持ちの方）</li>
+                            </ul>
+                            <p class="mt-3 text-xs text-mediumorchid bg-mediumorchid/5 p-2 rounded">
+                                ※パソコンがない場合、3台まで用意あります。お早めにご相談ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 申込セクション -->
+    <section id="apply" class="py-20 bg-purple/5 text-center px-4">
+        <div class="max-w-2xl mx-auto card p-10 bg-white shadow-2xl">
+            <h2 class="text-2xl font-bold text-purple mb-6">ワークショップに参加する</h2>
+            <p class="mb-8">「私にもできるかしら？」という不安も、<br>一緒に解消していきましょう。</p>
+            
+            <form class="space-y-4 text-left">
+                <div>
+                    <label class="block text-sm font-bold mb-1">ご希望のコース</label>
+                    <select class="w-full border-2 border-mediumorchid/20 rounded-lg p-3 focus:border-mediumorchid outline-none">
+                        <option>①ショート動画コース</option>
+                        <option>②LINEスタンプコース</option>
+                    </select>
+                </div>
+                <button type="button" onclick="alert('お申込みフォームへ移動します（デモ）')" class="w-full btn-retro text-xl mt-4">
+                    空き状況を確認して予約する
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. お問合せセクション -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="section-title">お問合せ</h2>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border-2 border-dotted border-mediumorchid">
+                <form class="grid md:grid-cols-2 gap-6">
+                    <div class="md:col-span-1">
+                        <label class="block text-sm font-bold mb-2 text-purple">お名前</label>
+                        <input type="text" placeholder="例：山田 花子" class="w-full border-b-2 border-gray-200 p-2 outline-none focus:border-mediumorchid transition-colors">
+                    </div>
+                    <div class="md:col-span-1">
+                        <label class="block text-sm font-bold mb-2 text-purple">メールアドレス</label>
+                        <input type="email" placeholder="example@mail.com" class="w-full border-b-2 border-gray-200 p-2 outline-none focus:border-mediumorchid transition-colors">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold mb-2 text-purple">お問合せ内容</label>
+                        <textarea rows="4" placeholder="ご質問などご自由に入力ください" class="w-full border-2 border-gray-100 rounded-xl p-3 outline-none focus:border-mediumorchid transition-colors"></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center mt-4">
+                        <button type="button" class="bg-mediumorchid text-white px-10 py-3 rounded-full hover:bg-purple transition-colors">送信する</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- SNS Links -->
+            <div class="mt-16 flex justify-center space-x-8">
+                <a href="#" class="text-purple hover:text-mediumorchid transition-transform hover:scale-110">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-8 h-8 mb-1" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                        <span class="text-xs uppercase">X</span>
+                    </div>
+                </a>
+                <a href="#" class="text-purple hover:text-mediumorchid transition-transform hover:scale-110">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-8 h-8 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path></svg>
+                        <span class="text-xs uppercase">Instagram</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-purple text-white py-10 text-center">
+        <p class="text-sm opacity-80">&copy; 2026 AIわくわくワークショップ All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Fade-in Animation on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
